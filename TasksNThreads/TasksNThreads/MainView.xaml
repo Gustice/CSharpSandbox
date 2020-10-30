@@ -26,7 +26,8 @@
             <Button Content="Long AsyncProcess"
                     Command="{Binding LongAsyncProcessCommand}" />
             <Separator Height="8" />
-            <TextBlock HorizontalAlignment="Stretch" Text="{Binding LastActionLog}" />
+            <Button Content="Nested Process"
+                    Command="{Binding NestedProcessCommand}" />
         </StackPanel>
 
         <ListBox Grid.Column="1"
