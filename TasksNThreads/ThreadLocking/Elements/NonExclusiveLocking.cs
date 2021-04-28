@@ -27,6 +27,7 @@ namespace ThreadLocking.Elements
             fetcher2.Start();
             Task.Run(() => Task.Delay(200)).GetAwaiter().GetResult();
             fetcher3.Start();
+            
             Task.Run(() => Task.Delay(500)).GetAwaiter().GetResult();
         }
 

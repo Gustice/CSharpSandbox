@@ -44,8 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\PrintHelper.cs" />
+    <Compile Include="Elements\AbortCondition.cs" />
     <Compile Include="Elements\NonExclusiveLocking.cs" />
     <Compile Include="Elements\ExclusiveLocking.cs" />
+    <Compile Include="Elements\SignalingWithReset.cs" />
     <Compile Include="Elements\Signaling.cs" />
     <Compile Include="Elements\ValuableRessource.cs" />
     <Compile Include="Program.cs" />

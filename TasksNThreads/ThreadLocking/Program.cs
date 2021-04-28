@@ -10,8 +10,9 @@ namespace ThreadLocking
         {
             ExclusiveLocking.RunTest();
             NonExclusiveLocking.RunTest();
-            
             Signaling.RunTest();
+            SignalingWithReset.RunTest();
+            AbortCondition.RunTest();
 
             Console.ReadLine();
         }

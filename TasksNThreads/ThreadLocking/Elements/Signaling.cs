@@ -45,7 +45,7 @@ namespace ThreadLocking.Elements
                     _queue.Enqueue(new ValuableRessource() { Key = i, Value = rnd.ToString()});
                     Console.WriteLine("enqueud was: " + rnd);
                     Monitor.Pulse(_token);
-                    Thread.Sleep(500);
+                    Thread.Sleep(100);
                 }
             }
 
