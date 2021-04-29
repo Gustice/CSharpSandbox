@@ -1,4 +1,6 @@
-﻿using System;
+﻿// This program can be run by "dotnet run" command in terminal
+
+using System;
 using System.IO;
 using Microsoft.CodeAnalysis.CSharp.Scripting;
 using Microsoft.CodeAnalysis.Scripting;

@@ -1,3 +1,7 @@
+// Note 
+//  Scripts are included by #load-directive 
+//  Head-File can be run by "dotnet-script <ScriptFile.csx>"
+
 #load "BaseScript.csx"
 
 var p1 = new Point(1,2);
