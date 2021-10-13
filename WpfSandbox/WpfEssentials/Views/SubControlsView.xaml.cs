@@ -12,23 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfEssentials.ViewModels;
 
-namespace WpfEssentials
+namespace WpfEssentials.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SubControlsView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SubControlsView : UserControl
     {
-        public SubControlsViewModel SubControls { get; }
-
-        public MainWindow()
+        public SubControlsView()
         {
             InitializeComponent();
-            DataContext = this;
-
-            SubControls = new SubControlsViewModel();
         }
     }
 }
