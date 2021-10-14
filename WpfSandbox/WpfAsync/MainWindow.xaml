@@ -3,9 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAsync"
         xmlns:views="clr-namespace:WpfAsync.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow"
+        Height="450"
+        Width="800"
+        d:DataContext="{d:DesignInstance local:MainWindow}">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -13,7 +17,15 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <views:AsyncControlView DataContext="{Binding AsyncView}" />
+        <views:AsyncEssentialsView Grid.Column="0"
+                                   Margin="8"
+                                   DataContext="{Binding AsyncEssentials}" />
+        <views:AsyncControlView Grid.Column="1"
+                                Margin="8"
+                                DataContext="{Binding AsyncControl}" />
+        <views:AsyncFailsView Grid.Column="2"
+                              Margin="8"
+                              DataContext="{Binding AsyncFails}" />
 
     </Grid>
 </Window>

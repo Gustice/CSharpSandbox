@@ -8,14 +8,18 @@ namespace WpfAsync
     /// </summary>
     public partial class MainWindow : Window
     {
-        public AsyncControlViewModel AsyncView { get; }
+        public AsyncControlViewModel AsyncControl { get; }
+        public AsyncFailsViewModel AsyncFails { get; }
+        public AsyncEssentialsViewModel AsyncEssentials { get; }
 
         public MainWindow()
         {
             InitializeComponent();
             DataContext = this;
 
-            AsyncView = new AsyncControlViewModel();
+            AsyncControl = new AsyncControlViewModel();
+            AsyncFails = new AsyncFailsViewModel();
+            AsyncEssentials = new AsyncEssentialsViewModel();
         }
     }
 }

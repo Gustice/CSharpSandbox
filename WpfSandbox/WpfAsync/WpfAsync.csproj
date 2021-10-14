@@ -55,14 +55,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\AsyncConstructable.cs" />
     <Compile Include="Models\TextProperty.cs" />
     <Compile Include="Utils\AsyncProperty.cs" />
     <Compile Include="Utils\Bindable.cs" />
     <Compile Include="Utils\AsyncCommand.cs" />
     <Compile Include="Utils\BindableProperty.cs" />
+    <Compile Include="Utils\TaskWorkaround.cs" />
     <Compile Include="ViewModels\AsyncControlViewModel.cs" />
+    <Compile Include="ViewModels\AsyncEssentialsViewModel.cs" />
+    <Compile Include="ViewModels\AsyncFailsViewModel.cs" />
     <Compile Include="Views\AsyncControlView.xaml.cs">
       <DependentUpon>AsyncControlView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AsyncEssentialsView.xaml.cs">
+      <DependentUpon>AsyncEssentialsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AsyncFailsView.xaml.cs">
+      <DependentUpon>AsyncFailsView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -77,6 +87,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\AsyncControlView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AsyncEssentialsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AsyncFailsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
