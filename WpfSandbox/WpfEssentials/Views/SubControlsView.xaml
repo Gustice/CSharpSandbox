@@ -75,7 +75,8 @@
 
             <TextBlock Text="NestedControl with DependancyProperty" />
             <controls:DependancyControl Label="Text Content:"  
-                                        Value="{Binding Selected.Text, Mode=TwoWay}" />
+                                        Value="{Binding Selected.Text, Mode=TwoWay}"
+                                        Loaded="DependancyControl_Loaded" />
             <controls:DependancyControl Label="Number Content:"
                                         Value="{Binding Selected.Number, Mode=TwoWay}" />
 

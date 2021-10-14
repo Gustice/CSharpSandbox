@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Data;
 using WpfAsync.Models;
 using WpfAsync.Utils;
 
 namespace WpfAsync.ViewModels
 {
-    public class AsyncControlViewModel : BindableBase
+    public class AsyncControlViewModel : Bindable
     {
         /// <summary>
         /// Progress as bindable Property (already implements INotifyPropertyChanged)
@@ -33,11 +35,16 @@ namespace WpfAsync.ViewModels
         /// </summary>
         public AsyncCommand StartCommand { get; }
 
+        private readonly object lockObject = new object();
+        public ObservableCollection<int> Numbers { get; } = new ObservableCollection<int>();
 
         public AsyncControlViewModel()
         {
             StartCommand = new AsyncCommand(OnStart, OnNotifyCallback);
             LazyProperty = new AsyncProperty<TextProperty>(LoadProperty);
+
+            // Enables synchronization by background thread
+            BindingOperations.EnableCollectionSynchronization(Numbers, lockObject);
         }
 
         private async Task<TextProperty> LoadProperty()
@@ -52,9 +59,11 @@ namespace WpfAsync.ViewModels
         {
             var counter = 50;
             Status = "Started";
+            Numbers.Clear();
 
             while (counter-- > 0)
             {
+                Numbers.Add(counter);
                 cToken.ThrowIfCancellationRequested();
                 // Updating progress output
                 Progress.Property = $"Processing ... {counter}";

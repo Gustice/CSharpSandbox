@@ -57,7 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="Models\TextProperty.cs" />
     <Compile Include="Utils\AsyncProperty.cs" />
-    <Compile Include="Utils\BindableBase.cs" />
+    <Compile Include="Utils\Bindable.cs" />
     <Compile Include="Utils\AsyncCommand.cs" />
     <Compile Include="Utils\BindableProperty.cs" />
     <Compile Include="ViewModels\AsyncControlViewModel.cs" />

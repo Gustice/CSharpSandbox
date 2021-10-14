@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace WpfAsync.Utils
 {
-    public class BindableBase : INotifyPropertyChanged
+    public class Bindable : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

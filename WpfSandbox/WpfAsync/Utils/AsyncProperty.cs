@@ -8,7 +8,7 @@ namespace WpfAsync.Utils
     /// <summary>
     /// Property for implementing asynchronous update mechanisms 
     /// </summary>
-    public class AsyncProperty<T> : BindableBase
+    public class AsyncProperty<T> : Bindable
     {
         private readonly Func<Task<T>> _loadingFunc;
         private T _data;

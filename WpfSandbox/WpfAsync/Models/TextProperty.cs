@@ -2,7 +2,7 @@
 
 namespace WpfAsync.Models
 {
-    public class TextProperty : BindableBase
+    public class TextProperty : Bindable
     {
         private string _text;
 

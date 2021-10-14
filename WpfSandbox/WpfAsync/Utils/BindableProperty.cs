@@ -6,7 +6,7 @@ namespace WpfAsync.Utils
     /// Generic bindable property class, with integrated change notification. 
     /// The Property called "Property" is supposed to be binded. 
     /// </summary>
-    public class BindableProperty<T> : BindableBase
+    public class BindableProperty<T> : Bindable
     {
         private T _backingField;
 

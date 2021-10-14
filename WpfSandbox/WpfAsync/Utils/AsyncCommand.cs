@@ -8,7 +8,7 @@ namespace WpfAsync.Utils
     /// <summary>
     /// ICommand implementation targeting asynchronous applications
     /// </summary>
-    public class AsyncCommand : BindableBase, ICommand
+    public class AsyncCommand : Bindable, ICommand
     {
         private readonly Func<CancellationToken, Task> _taskToInvoke;
         private readonly Func<string, Task> _onNotifyCallback;
