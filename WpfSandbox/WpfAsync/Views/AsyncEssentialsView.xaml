@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="WpfAsync.Views.AsyncEssentialsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WpfAsync.Views"
+             xmlns:models="clr-namespace:WpfAsync.ViewModels"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="300"
+             d:DataContext="{d:DesignInstance models:AsyncEssentialsViewModel, IsDesignTimeCreatable=True}">
+    <StackPanel>
+        <TextBlock Text="Async Essentials"
+                   FontSize="16" />
+        
+        <TextBlock Text="Desynchronize" />
+        <Button Content="By direct Hack"
+                Command="{Binding AsyncHackCommand}"
+                IsEnabled="{Binding AsyncHackCommand.IsActive}" />
+        <Button Content="By Static Helper"
+                Command="{Binding SyncWorkAroundCommand}"
+                IsEnabled="{Binding SyncWorkAroundCommand.IsActive}" />
+        <Button Content="By Background Task"
+                Command="{Binding AsyncWorkAroundCommand}"
+                IsEnabled="{Binding AsyncWorkAroundCommand.IsActive}" />
+        <Separator Visibility="Hidden" />
+
+        <TextBlock Text="Two async Tasks" />
+        <Button Content="Starting two async Tasks"
+                Command="{Binding AsyncProcessingCommand}" />
+        <Separator Visibility="Hidden" />
+
+        <TextBlock Text="Construction" />
+        <Button Content="Construct asynchronously"
+                Command="{Binding ConstructCommand}" />
+
+
+    </StackPanel>
+</UserControl>
