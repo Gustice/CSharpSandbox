@@ -12,6 +12,7 @@ namespace WpfAsync.Models
     {
         public BindableProperty<string> SomeText { get; } = new BindableProperty<string>();
         public BindableProperty<int> SomeNumber { get; } = new BindableProperty<int>();
+        public int SetValue { get; private set; }
 
         private AsyncConstructable()
         {
@@ -20,7 +21,8 @@ namespace WpfAsync.Models
 
         private async Task Initialize()
         {
-            Thread.Sleep(1_000); // Simulate some serous work
+            await Task.Delay(1000);
+            SetValue = 10;
         }
 
         public static async Task<AsyncConstructable> Construct() {

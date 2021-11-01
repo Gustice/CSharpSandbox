@@ -12,14 +12,28 @@
     <StackPanel>
         <TextBlock Text="Async Essentials"
                    FontSize="16" />
+        
         <TextBlock Text="Desynchronize" />
         <Button Content="By direct Hack"
                 Command="{Binding AsyncHackCommand}"
                 IsEnabled="{Binding AsyncHackCommand.IsActive}" />
         <Button Content="By Static Helper"
+                Command="{Binding SyncWorkAroundCommand}"
+                IsEnabled="{Binding SyncWorkAroundCommand.IsActive}" />
+        <Button Content="By Background Task"
                 Command="{Binding AsyncWorkAroundCommand}"
                 IsEnabled="{Binding AsyncWorkAroundCommand.IsActive}" />
         <Separator Visibility="Hidden" />
+
+        <TextBlock Text="Two async Tasks" />
+        <Button Content="Starting two async Tasks"
+                Command="{Binding AsyncProcessingCommand}" />
+        <Separator Visibility="Hidden" />
+
+        <TextBlock Text="Construction" />
+        <Button Content="Construct asynchronously"
+                Command="{Binding ConstructCommand}" />
+
 
     </StackPanel>
 </UserControl>

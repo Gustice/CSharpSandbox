@@ -25,6 +25,13 @@
                     Click="FreezeGui_Click" />
             <Button Content="Freeze in Model"
                     Command="{Binding FreezeGuiCommand}" />
+
+            <TextBlock Text="Wrong Order" />
+            <Button Content="Start Process"
+                    Command="{Binding WrongOrderCommand}" />
+            <ScrollViewer MaxHeight="80">
+                <TextBlock Text="{Binding OutputOrderText}" />
+            </ScrollViewer> 
         </StackPanel>
     </Border>
 </UserControl>
