@@ -14,13 +14,13 @@
                    FontSize="16" />
         
         <TextBlock Text="Desynchronize" />
-        <Button Content="By direct Hack"
+        <Button Content="By direct Hack (using async-void-Signature)"
                 Command="{Binding AsyncHackCommand}"
                 IsEnabled="{Binding AsyncHackCommand.IsActive}" />
-        <Button Content="By Static Helper"
-                Command="{Binding SyncWorkAroundCommand}"
-                IsEnabled="{Binding SyncWorkAroundCommand.IsActive}" />
-        <Button Content="By Background Task"
+        <Button Content="By Static Helper (encapsulated hack)"
+                Command="{Binding WorkAroundHelperCommand}"
+                IsEnabled="{Binding WorkAroundHelperCommand.IsActive}" />
+        <Button Content="By Background Task (Non-Freezing)"
                 Command="{Binding AsyncWorkAroundCommand}"
                 IsEnabled="{Binding AsyncWorkAroundCommand.IsActive}" />
         <Separator Visibility="Hidden" />

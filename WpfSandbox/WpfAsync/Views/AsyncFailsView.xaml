@@ -14,9 +14,9 @@
             <TextBlock Text="Async Fails"
                        FontSize="16" />
             <TextBlock Text="DeadLoacks" />
-            <Button Content="With Deadlock in Code Behind"
+            <Button Content="Deadlock in Code Behind"
                     Click="DeadLock_Click" />
-            <Button Content="With Deadlock in Model"
+            <Button Content="Deadlock in View-Model"
                     Command="{Binding DeadLockCommand}" />
             <Separator Visibility="Hidden" />
 
@@ -25,13 +25,23 @@
                     Click="FreezeGui_Click" />
             <Button Content="Freeze in Model"
                     Command="{Binding FreezeGuiCommand}" />
-
+            <Separator Visibility="Hidden" />
+            
             <TextBlock Text="Wrong Order" />
-            <Button Content="Start Process"
+            <Button Content="Process that calls not awaited method"
                     Command="{Binding WrongOrderCommand}" />
-            <ScrollViewer MaxHeight="80">
+            <Button Content="Process that calls not awaitable method"
+                    Command="{Binding NotAwaitableCommand}" />
+            <ScrollViewer MaxHeight="100">
                 <TextBlock Text="{Binding OutputOrderText}" />
-            </ScrollViewer> 
+            </ScrollViewer>
+            <Separator Visibility="Hidden" />
+
+            <TextBlock Text="Uncatchable Exception" />
+            <Button Content="Process that throws uncatched Exception"
+                    Command="{Binding InvokeThrowingCommand}" />
+            <Button Content="Process that throws uncatchable Exception"
+                    Command="{Binding InvokeThrowingUncatchableCommand}" />
         </StackPanel>
     </Border>
 </UserControl>

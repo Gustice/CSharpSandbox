@@ -11,7 +11,7 @@
              d:DataContext="{d:DesignInstance models:AsyncControlViewModel, IsDesignTimeCreatable=True}">
     <Grid>
         <StackPanel Grid.Column="0">
-            <TextBlock Text="Async Processes"
+            <TextBlock Text="Async Command"
                        FontSize="16" />
             <TextBlock Text="Async Command- and Property-Bindings" />
             <Button Command="{Binding StartCommand}"
@@ -20,18 +20,10 @@
                     Content="Cancel" />
             <TextBox Text="{Binding Progress.Property}" />
             <TextBox Text="{Binding Status}" />
-            <Separator Visibility="Hidden" />
 
-            <TextBlock Text="Lazy Loading and async refresh" />
-            <Button Command="{Binding LazyProperty.ReloadCommand}"
-                    Content="Reload" />
-            <TextBox IsReadOnly="True"
-                     Background="LightGray"
-                     Text="{Binding LazyProperty.Property.Text, Mode=OneWay}" />
-            <Separator Visibility="Hidden" />
-            
             <TextBlock Text="Observable Collection Notify" />
-            <ItemsControl ItemsSource="{Binding Numbers}" Height="60">
+            <ItemsControl ItemsSource="{Binding Numbers}"
+                          Height="60">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel />
@@ -44,8 +36,19 @@
                             <TextBlock Text="{Binding}" />
                         </Border>
                     </DataTemplate>
-                </ItemsControl.ItemTemplate>                
+                </ItemsControl.ItemTemplate>
             </ItemsControl>
+
+            <Separator Visibility="Hidden" />
+
+            <TextBlock Text="Lazy Loading and async refresh" />
+            <Button Command="{Binding LazyProperty.ReloadCommand}"
+                    Content="Reload" />
+            <TextBox IsReadOnly="True"
+                     Background="LightGray"
+                     Text="{Binding LazyProperty.Property.Text, Mode=OneWay}" />
+            <Separator Visibility="Hidden" />
+            
         </StackPanel>
     </Grid>
 </UserControl>
