@@ -31,7 +31,7 @@ namespace WpfAsync.ViewModels
         public AsyncProperty<TextProperty> LazyProperty { get; }
 
         /// <summary>
-        /// Asynchronous command demonstration with integrated Cancel command.
+        /// Asynchronous command demonstration with integrated cancel command.
         /// </summary>
         public AsyncCommand StartCommand { get; }
 
@@ -55,6 +55,9 @@ namespace WpfAsync.ViewModels
             return new TextProperty($"Lazy Load Completed {DateTime.Now}");
         }
 
+        /// <summary>
+        /// Demonstration of canceable process
+        /// </summary>
         private async Task OnStart(CancellationToken cToken)
         {
             var counter = 50;

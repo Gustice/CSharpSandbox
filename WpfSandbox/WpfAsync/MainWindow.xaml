@@ -17,15 +17,16 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <views:AsyncEssentialsView Grid.Column="0"
-                                   Margin="8"
-                                   DataContext="{Binding AsyncEssentials}" />
-        <views:AsyncControlView Grid.Column="1"
-                                Margin="8"
-                                DataContext="{Binding AsyncControl}" />
-        <views:AsyncFailsView Grid.Column="2"
+
+        <views:AsyncFailsView Grid.Column="0"
                               Margin="8"
                               DataContext="{Binding AsyncFails}" />
+        <views:AsyncEssentialsView Grid.Column="1"
+                                   Margin="8"
+                                   DataContext="{Binding AsyncEssentials}" />
+        <views:AsyncControlView Grid.Column="2"
+                                Margin="8"
+                                DataContext="{Binding AsyncControl}" />
 
     </Grid>
 </Window>
